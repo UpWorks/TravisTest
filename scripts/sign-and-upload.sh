@@ -17,10 +17,10 @@ echo "*        Signing          *"
 echo "***************************"
 xcrun -log -v -sdk iphoneos9.2 PackageApplication "$OUTPUTDIR/$APP_NAME.app" -o "$OUTPUTDIR/$APP_NAME.ipa" -sign "$DEVELOPER_NAME" -embed "$PROVISIONING_PROFILE"
 
-- echo "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"
-- ls -al "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"
-- echo "$OUTPUTDIR/$APP_NAME.app"
-- ls -al "$OUTPUTDIR/$APP_NAME.app"
+echo "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"
+ls -al "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"
+echo "$OUTPUTDIR/$APP_NAME.app"
+ls -al "$OUTPUTDIR/$APP_NAME.app"
 
  sudo zip -r -9 "$OUTPUTDIR/$APP_NAME.app.dSYM.zip" " $OUTPUTDIR/$APP_NAME.app"
 
