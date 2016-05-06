@@ -22,7 +22,7 @@ ls -al "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"
 echo "$OUTPUTDIR/$APP_NAME.app"
 ls -al "$OUTPUTDIR/$APP_NAME.app"
 
- sudo zip -r -9 "$OUTPUTDIR/$APP_NAME.app.dSYM.zip" " $OUTPUTDIR/$APP_NAME.app"
+zip -r -9 "$OUTPUTDIR/$APP_NAME.app.dSYM.zip" "$OUTPUTDIR/$APP_NAME.app"
 
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
