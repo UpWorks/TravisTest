@@ -18,6 +18,10 @@ env:
   - GOOD_ZIP="Good_Dynamics_client_SDK_for_iOS_v2.1.4439.tar.gz"
   - FIPS_FILE="FIPS_module.tar"
   - FIPS_DIR="FIP_Module"
+addons:
+  apt:
+    packages:
+      - sshpass
 before_script:
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/TravisTest_Ad_Hoc.mobileprovision.enc -d -a -out scripts/profile/TravisTest_Ad_Hoc.mobileprovision
   - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a -out scripts/certs/dist.cer
