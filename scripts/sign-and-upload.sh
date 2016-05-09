@@ -28,4 +28,4 @@ RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
 
 export SSHPASS="$DEPLOY_PASS"
-sshpass -e sftp "$DEPLOY_USER"@"$DEPLOY_HOST":"$DEPLOY_PATH" <<< $'put "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"'
+sshpass -e -o sftp "$DEPLOY_USER"@"$DEPLOY_HOST":"$DEPLOY_PATH" <<< $'put "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"'
