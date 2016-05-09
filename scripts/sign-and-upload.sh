@@ -22,5 +22,5 @@ zip -r -9 "$OUTPUTDIR/$APP_NAME.app.dSYM.zip" "$OUTPUTDIR/$APP_NAME.app"
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
 
-export SSHPASS="$DEPLOY_PASS"
-sudo sshpass -e sftp -o stricthostkeychecking=no "$DEPLOY_USER"@"$DEPLOY_HOST":"$DEPLOY_PATH" <<< $'put "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"'
+export SSHPASS=$DEPLOY_PASS
+sudo sshpass -e sftp -o stricthostkeychecking=no $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH <<< $'put "$OUTPUTDIR/$APP_NAME.app.dSYM.zip"'
