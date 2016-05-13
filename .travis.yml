@@ -6,7 +6,7 @@ xcode_sdk: iphonesimulator9.2
 before_install:
     - brew update
     - brew upgrade xctool
-    - brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+    - brew install homebrew/dupes/expect
 env:
  global:
   - secure:  "T2sOJicybh2+sGmtXKwSFJrciXFTz1d1DBK5zBrW/rpJzAyix3TA6kA1ZCt5K5pOwW4VDNY4BaxhLzVlTVrDEfBaid8hpnMuUCCO1I5PoHvD8sI1YtPxcYrj+Q5bI/QVMClMoNJ/pqCm0/J39bookqyOolBoi+/5KGrFRAlztt6UGSGM3f+mnXa9TqzVc4kD4jHAJqdilhHKkrfsT9TwzIYnWefszyNFC7OIVC3KlImdjnQcE1YT1CdwDSF/6K3+3Cz1VwfJXG76a1vWMKfxQYzwhD/MUJ9fnNw9ahBpqguSDCKnxgExBDxGQk3KzWBbhVGHn9qikAgJzi1LF1k2BNL0qTxaMnvHtterqusNnH6A4YFSvJXNFpN69DU3NPIqLQOMmPupAw51HNQGelf0rc2h1oXOcrzkodKUEkbOFtb+KaV/vs6aoTn8s6HHqDCfV8t2tCaEYzGWdYHAPYKhSm76aSI4xFCT1DCjdZLjT8UL1s4QPxn/XVvh5mv476iQpF2VNpUAkal6MZQxl4vJrUm7aVXEhljDiLbBOVU+ki2xCr8XsDSLAYRSsJ3Sh4m1VqovEx7X8/aHueqIr+xfQgKaRRizsN1n/qosije+0+4V0N0jGzPwbBkLQj/zswQqg11PWwX6tlAJA9pRVG8G0h7nKW+wkaLurX+qRJ5fL0A="
