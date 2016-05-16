@@ -25,5 +25,5 @@ RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
 #export SSHPASS=$DEPLOY_PASS
 #sshpass -e sftp -o stricthostkeychecking=no $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH <<< \$\'put $OUTPUTDIR\/$APP_NAME.app.dSYM.zip\'
 
-#sftp $DEPLOY_USER@$DEPLOY_HOST
-#expect "upworksio@72.47.236.47's password:"
+sftp $DEPLOY_USER@$DEPLOY_HOST
+expect 
