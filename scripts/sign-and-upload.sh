@@ -19,17 +19,16 @@ xcrun -log -v -sdk iphoneos9.2 PackageApplication "$OUTPUTDIR/$APP_NAME.app" -o 
 
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
-RELEASE_FILE = "$OUTPUTDIR/$APP_NAME.app.RELEASE_DATE.dSYM.zip"
+RELEASE_FILE="$OUTPUTDIR/$APP_NAME.app.$TRAVIS_BUILD_NUMBER.dSYM.zip"
 
 zip -r -9 "$RELEASE_FILE" "$OUTPUTDIR/$APP_NAME.app"
 
 sftp -o stricthostkeychecking=no $DEPLOY_USER@$DEPLOY_HOST
-expect "upworksio@72.47.236.47's password: "
+expect "$DEPLOY_USER@$DEPLOY_HOST's password: "
 send "$DEPLOY_PASS\r"
 expect "sftp>"
-send "cd $DEPLOY_PATH"
+send "cd $DEPLOY_PATH\r"
 expect "sftp>"
 send "put $RELEASE_FILE"
 expect "sftp>"
 send "bye\r"
-EOD
