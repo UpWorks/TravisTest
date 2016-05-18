@@ -17,13 +17,19 @@ echo "*        Signing          *"
 echo "***************************"
 xcrun -log -v -sdk iphoneos9.2 PackageApplication "$OUTPUTDIR/$APP_NAME.app" -o "$OUTPUTDIR/$APP_NAME.ipa" -sign "$DEVELOPER_NAME" -embed "$PROVISIONING_PROFILE"
 
-zip -r -9 "$OUTPUTDIR/$APP_NAME.app.dSYM.zip" "$OUTPUTDIR/$APP_NAME.app"
-
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
+RELEASE_FILE = "$OUTPUTDIR/$APP_NAME.app.RELEASE_DATE.dSYM.zip"
 
-#export SSHPASS=$DEPLOY_PASS
-#sshpass -e sftp -o stricthostkeychecking=no $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH <<< \$\'put $OUTPUTDIR\/$APP_NAME.app.dSYM.zip\'
+zip -r -9 "$RELEASE_FILE" "$OUTPUTDIR/$APP_NAME.app"
 
 sftp -o stricthostkeychecking=no $DEPLOY_USER@$DEPLOY_HOST
-expect 
+expect "upworksio@72.47.236.47's password: "
+send "$DEPLOY_PASS\r"
+expect "sftp>"
+send "cd $DEPLOY_PATH"
+expect "sftp>"
+send "put $RELEASE_FILE"
+expect "sftp>"
+send "bye\r"
+EOD
