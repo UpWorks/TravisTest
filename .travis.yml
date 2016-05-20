@@ -61,3 +61,4 @@ deploy:
   on:
     repo: UpWorks/TravisTest
     tags: true
+    all_branches: true
