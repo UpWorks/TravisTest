@@ -4,17 +4,12 @@ xcode_project: TravisTest.xcodeproj
 xcode_scheme: TravisTest
 xcode_sdk: iphonesimulator9.2
 before_install:
-    - brew update
-    - brew upgrade xctool
-    - brew install homebrew/dupes/expect
+- brew update
+- brew upgrade xctool
 env:
- global:
-  - secure:  "T2sOJicybh2+sGmtXKwSFJrciXFTz1d1DBK5zBrW/rpJzAyix3TA6kA1ZCt5K5pOwW4VDNY4BaxhLzVlTVrDEfBaid8hpnMuUCCO1I5PoHvD8sI1YtPxcYrj+Q5bI/QVMClMoNJ/pqCm0/J39bookqyOolBoi+/5KGrFRAlztt6UGSGM3f+mnXa9TqzVc4kD4jHAJqdilhHKkrfsT9TwzIYnWefszyNFC7OIVC3KlImdjnQcE1YT1CdwDSF/6K3+3Cz1VwfJXG76a1vWMKfxQYzwhD/MUJ9fnNw9ahBpqguSDCKnxgExBDxGQk3KzWBbhVGHn9qikAgJzi1LF1k2BNL0qTxaMnvHtterqusNnH6A4YFSvJXNFpN69DU3NPIqLQOMmPupAw51HNQGelf0rc2h1oXOcrzkodKUEkbOFtb+KaV/vs6aoTn8s6HHqDCfV8t2tCaEYzGWdYHAPYKhSm76aSI4xFCT1DCjdZLjT8UL1s4QPxn/XVvh5mv476iQpF2VNpUAkal6MZQxl4vJrUm7aVXEhljDiLbBOVU+ki2xCr8XsDSLAYRSsJ3Sh4m1VqovEx7X8/aHueqIr+xfQgKaRRizsN1n/qosije+0+4V0N0jGzPwbBkLQj/zswQqg11PWwX6tlAJA9pRVG8G0h7nKW+wkaLurX+qRJ5fL0A="
-  - secure:  "JT0Hj7BTx0Qq118SvvwzxAgMVZyVJz7zDdnFbAQQNi7VTy4CCqL7W6yPTZtwujU/VgBR9dH7vHYt2e4y/9QsNjMcaxkrubCD/UOPWYc0bNlbfgIBSvvkF2ya8D1cnpmgTiLaflUVKtVfZvGNKGJBw7VgyjiKGqL0oomVApObHtuhX0vD1JyAQ1ci8DfggkNpD1a62LVdWm2UjcRYdU9f5v5MV9J8LB2/VoYlFVq/u6ThPcxRD5ATvj2M/C+wqGRzq+6g06mMoNXg0Un9teBGCfI3VTLrlm7oWq2o9Ok+JNByB7HNveIoGH5xSDs3kc/LmZW+dm+FqoMo1MFizY5E1SpwkB6QE/mY+817tWtLR+ekhFecdTNDM0sbvl9cLepdbebKvdhgvPuEbnYtTgAhAzyNjAoMD/KaSrjmratqJD5DFgEVU3aiMXfQZYfJ811QnBawo7fEiPdKn5DM+xvXO2XyxaCzF9KBt5pMipA+OeiFaWabwskWQqAE2ji/5BT/Va6SMSvw1HeL13UgkWpma7pvV9euU6sdLIH9ksFbsydDbscA/F/i3raHlYW49f016xsz26i8Y+VSI+RuaSnBTaGi8fZxc+Fu1X5hwln79/oDaHF1FiPdcW0oxQJ3WvykvsUkX7r6qtsu/RthSzVdyWOBELYssYchFbEpgCO+MHQ="
-  - secure: "hBeFXBwiyv1kCC22E00fCCvso3QXaacKNkaDx6NFdpuU6L/FAsb+TH8nR9RrYwoL+sH/Ndd7JpZn6h+7ZQg4q/TTzvXcK2J2+sAE0lqbAZWjUoeKR1rtMI7Kpg4KaVDG3f+FtQyZIvDXl+bIuUk9cnp40bcwDq48Los+vFdA4Nq3kpTFoIb/HmaRGn6zraKv1SHlK4qYvgB8YbZwTaL0i256yTGNFE1scxVxZSGU2RywkArigk5aLy9sVTVP6kFYbO3WYOH7VqLj5XATtZnioD/T5owN94wqPwTVDHs2qLu7McPo45RVpnNYUwHSkf4aTmTmySUcpqkCSyyUXbh9rflDC3uCEXR6R5sFcQSBx8sDoEv4upxJdyeUkHk/ebw+iNdeABNu9C2XbW0msc00Y5JZQYk9rXvo5fFZo3+z6YIGOcRx9r1+FKQU7DRXcW/O+OTPQy6gTciXyTT6U1DWS8eF4aXafz37JUh7R353VydMbLNfaIF3CobxWNCfC88SYNojuJrXJ0+C9eU0BlTYYdzmiuOAFTSXxDYeiyyOTpZj5TKFqbyxrOcHQtgEo8YO4sh9/Hs6smMFHXqIlrcHZ5FWz/S0UN8opXlTASQFzVD9tZsvGOPFs1p6vrHuirJhQsxtB4lRzBi/NM5MlOCL/YtaGzHrIcXNQ5lQUrIF4p4="
-  - secure: "QsRa2zbFsO+KlPEdSzUV5xPLXGZnlZKLY/ZKMBBgffzgaI7APpastxO43qNJS7al8/EdnU2xu7u0bCl0Ap5jSSbMLy1gCmzzclEVdfSPpsRZQpcB5EmSe281P+XrgdD9LT0feYJEpyjhqzWDOdxmMaMH/uGc+7P7s7PUY4E7TXPtHWQcm6T5wwdDJWHiVW41sdTqq6p7yPYlQCvaUxJEgWg8VHLibbSPxbLE9bZDBldhUcnTYyVdC7pfYpZHQ85lI8h0637ipc8cuiS/Jj2VWu0pufFB0T7vtiERXe5RSbUtKsueHmadA17LXctmkRTMOYNFtuk2Wy1MF14azK8Z6qgIDkxp7ceiuiy5xV/wxiTzjZ9dW/CJTRV4n9Z4XFYpLwIURq+XCkB+465u4YQUYwebmPuW0J84tJfhNOtOQI1LMnhf1tMkG/z+ID3ZIaDS8329DpQUIiFBLM8XaqVoQkFoPW6a0G08d2yBLa21LCBu2sIrCmqVx66BCebMPrLWB4Z74yL/zX7b1m19gO7xKDjeOKOy6BPB/gjdQp+wUtKpXrWn9CrfdPiaF48OJIGv66Zg+GOuCmazmZyEWbc9BSzlYeP0IsbeGU80wi+FwWTTcIk9pKrJEjmUfp8AeQri/VkhlS079n8liVOruHk/UJsXwxNz2kLlxH+HWzIGLxQ=" 
-  - secure: "pIUIjruOxRAbLkIW/bQZkykr0JyNxSj6IkI+BeEqfXAgqZEXgAMoEPcrVitVKJT8wmoRs5K7Cd+DOek+XvLO7YUwXTKqdgDZhz8OkvDoxPaWJwep0yvZSY0jSmcy8WisFp7/bsOHk42hVkpVfScYL4vgNIzo0ykmRRa/A9fEBIDSwlCMG0PIyYxuiffQutoLIWVeQixaHA8q+CFZQ9UgpMJBl6BNy+L0nS3LIzPpcnx3P/2MijXwHEZG/8M++ORGcolHdayKvnEi9fw9D5vh/jwJ8fy1tUwSEe69lWec/5FXZ7ry8J77RJunFBjjuedf9rQj3dY82nC59fqVWpX8VxPzEwW1WNKlK4o23j2aMF6/zVAZmuHaTA03KrDX71VKXei1Porw3TRIGVUYTntmmpGoWvrM4KdMLd5kfC/ztSt3Se82ktWYrmrJu8oKnseAY7AMHKsFDyZD/X9z+gTBSGT717X+gchOJ6Oap39BysE8mADRPpM+5FeR2gWwkxsQJYjNeFoBtAbAbgm6f+5alkX29NYO8Ti7YIPlGdxp4U3xWQ77B19Fy1ZLXZaSQ+RviDYdQonZIKpFLSNurAhhoN3KTkFg7Jt2Bbsprj4Ki+01BnmG3mDlIrYgsdG6i/i1UO1pjpDtNROf7iHW+2ekWQ4NRPZLenbfujSpW2XfuDs="
-  - secure: "PT8H7tLtkTSdWI8/c18qiWHuoZzBBilEa7mEHLDCfJglCAhpB3cznN5RuloSKJIuz+2Vc8/kPci4Q6oJKN4Re95tgiUeMgAYXdTa2/iP3zcKRURclQjg79xY8pp4N8HGmPmUGcgPVV2amtChO4CfkfqMvXbdI7TRj1m67dspo4CwhI/nP32fNm3tSPfXKKsG3cOPCYfu0HhH3lczXVhQ08y1DZcjo+IRnvrt6wsuoVFxaa/aX3agk1o+SZfTDext5awpDcQBnQZ/ITThAID/KZEitriX0SKBUgfsfHabgk3CP+ImoPLsxgS13iPAY9FMeg7JXbHIRM4pW6L23U2ku3juDXP+5QG9PAeD2KdlY6ZWYyc2R9sKan2SSWtJUD3W8AKpohFlZNBbUyTuDfBZMOi6Vhbv5CsPuR3kmYMVG+Rme2F0sbamOBYp/9sh2+dkhpGjYEsfiSYOGNEz7BeMveo1NGPP7ush4C8w9bkus6DFHln0yfIXIU5udMkagdktIE+RJuPWmBv3munWUmzLe1GCPQJjG6hKMdXubnhfvP/VG4R/i+sgEVh3HjWHhvZcX7577hPoUV+MbvNuUS7Dnvkijkohj4am8knGOdyMj9F4dBvWyxvzOJ3o7Xcy/75Qx5fyoEqWFq/nhWpYDVRtWxEjkLMrszqHEV7YbrfNd8o="
+  global:
+  - secure: T2sOJicybh2+sGmtXKwSFJrciXFTz1d1DBK5zBrW/rpJzAyix3TA6kA1ZCt5K5pOwW4VDNY4BaxhLzVlTVrDEfBaid8hpnMuUCCO1I5PoHvD8sI1YtPxcYrj+Q5bI/QVMClMoNJ/pqCm0/J39bookqyOolBoi+/5KGrFRAlztt6UGSGM3f+mnXa9TqzVc4kD4jHAJqdilhHKkrfsT9TwzIYnWefszyNFC7OIVC3KlImdjnQcE1YT1CdwDSF/6K3+3Cz1VwfJXG76a1vWMKfxQYzwhD/MUJ9fnNw9ahBpqguSDCKnxgExBDxGQk3KzWBbhVGHn9qikAgJzi1LF1k2BNL0qTxaMnvHtterqusNnH6A4YFSvJXNFpN69DU3NPIqLQOMmPupAw51HNQGelf0rc2h1oXOcrzkodKUEkbOFtb+KaV/vs6aoTn8s6HHqDCfV8t2tCaEYzGWdYHAPYKhSm76aSI4xFCT1DCjdZLjT8UL1s4QPxn/XVvh5mv476iQpF2VNpUAkal6MZQxl4vJrUm7aVXEhljDiLbBOVU+ki2xCr8XsDSLAYRSsJ3Sh4m1VqovEx7X8/aHueqIr+xfQgKaRRizsN1n/qosije+0+4V0N0jGzPwbBkLQj/zswQqg11PWwX6tlAJA9pRVG8G0h7nKW+wkaLurX+qRJ5fL0A=
+  - secure: JT0Hj7BTx0Qq118SvvwzxAgMVZyVJz7zDdnFbAQQNi7VTy4CCqL7W6yPTZtwujU/VgBR9dH7vHYt2e4y/9QsNjMcaxkrubCD/UOPWYc0bNlbfgIBSvvkF2ya8D1cnpmgTiLaflUVKtVfZvGNKGJBw7VgyjiKGqL0oomVApObHtuhX0vD1JyAQ1ci8DfggkNpD1a62LVdWm2UjcRYdU9f5v5MV9J8LB2/VoYlFVq/u6ThPcxRD5ATvj2M/C+wqGRzq+6g06mMoNXg0Un9teBGCfI3VTLrlm7oWq2o9Ok+JNByB7HNveIoGH5xSDs3kc/LmZW+dm+FqoMo1MFizY5E1SpwkB6QE/mY+817tWtLR+ekhFecdTNDM0sbvl9cLepdbebKvdhgvPuEbnYtTgAhAzyNjAoMD/KaSrjmratqJD5DFgEVU3aiMXfQZYfJ811QnBawo7fEiPdKn5DM+xvXO2XyxaCzF9KBt5pMipA+OeiFaWabwskWQqAE2ji/5BT/Va6SMSvw1HeL13UgkWpma7pvV9euU6sdLIH9ksFbsydDbscA/F/i3raHlYW49f016xsz26i8Y+VSI+RuaSnBTaGi8fZxc+Fu1X5hwln79/oDaHF1FiPdcW0oxQJ3WvykvsUkX7r6qtsu/RthSzVdyWOBELYssYchFbEpgCO+MHQ=
   - APP_NAME="TravisTest"
   - 'DEVELOPER_NAME="iPhone Distribution: Michael Updegraff (R296M65L64)"'
   - INFO_PLIST= "TravisTest/Info.plist"
@@ -24,27 +19,42 @@ env:
   - FIPS_FILE="FIPS_module.tar"
   - FIPS_DIR="FIP_Module"
 before_script:
-  - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/TravisTest_Ad_Hoc.mobileprovision.enc -d -a -out scripts/profile/TravisTest_Ad_Hoc.mobileprovision
-  - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a -out scripts/certs/dist.cer
-  - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12 
-  - ./scripts/add-key.sh
-  - ./scripts/update-bundle.sh
-  - cp "./scripts/$GOOD_ZIP" /Applications/Xcode.app/Contents/Developer
-  - cd /Applications/Xcode.app/Contents/Developer
-  - tar zxvf Good_Dynamics_client_SDK_for_iOS_v2.1.4439.tar.gz
-  - cd ./Good.Platform
-  - mkdir "$FIPS_DIR"
-  - cp "$FIPS_FILE" ./"$FIPS_DIR"
-  - cd ./"$FIPS_DIR"
-  - tar zxvf "$FIPS_FILE"
-  - cd /Applications/Xcode.app/Contents/Developer/Good.Platform
-  - sudo ./install.sh
-  - cd /Users/travis/build/UpWorks/TravisTest
-  - ./scripts/cs-xproj-validate.sh
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/TravisTest_Ad_Hoc.mobileprovision.enc
+  -d -a -out scripts/profile/TravisTest_Ad_Hoc.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a
+  -out scripts/certs/dist.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a
+  -out scripts/certs/dist.p12
+- ./scripts/add-key.sh
+- ./scripts/update-bundle.sh
+- cp "./scripts/$GOOD_ZIP" /Applications/Xcode.app/Contents/Developer
+- cd /Applications/Xcode.app/Contents/Developer
+- tar zxvf Good_Dynamics_client_SDK_for_iOS_v2.1.4439.tar.gz
+- cd ./Good.Platform
+- mkdir "$FIPS_DIR"
+- cp "$FIPS_FILE" ./"$FIPS_DIR"
+- cd ./"$FIPS_DIR"
+- tar zxvf "$FIPS_FILE"
+- cd /Applications/Xcode.app/Contents/Developer/Good.Platform
+- sudo ./install.sh
+- cd /Users/travis/build/UpWorks/TravisTest
+- ./scripts/cs-xproj-validate.sh
 script:
-  - xctool test -project TravisTest.xcodeproj -scheme TravisTest -sdk iphonesimulator9.2 ONLY_ACTIVE_ARCH=NO
-  - xctool -project TravisTest.xcodeproj -scheme TravisTest -sdk iphoneos9.2  -configuration Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
+- xctool test -project TravisTest.xcodeproj -scheme TravisTest -sdk iphonesimulator9.2
+  ONLY_ACTIVE_ARCH=NO
+- xctool -project TravisTest.xcodeproj -scheme TravisTest -sdk iphoneos9.2  -configuration
+  Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
 after_script:
-  - ./scripts/remove-key.sh
+- ./scripts/remove-key.sh
 after_success:
-  - ./scripts/sign-and-upload.sh
+- ./scripts/sign-and-upload.sh
+before_deploy:
+- export RELEASE_PKG_FILE="$RELEASE_FILE"
+- echo "deploying $RELEASE_PKG_FILE to GitHub releases"
+deploy:
+  provider: releases
+  api_key:
+    secure: kSJkB+sdJI9P0GoLS9SPSNRedmmcSdOMdNMicqitpKyYhL1EqS3FTe2mewkdScNlEKYpluT+zaS7dVlHpfY+k2xZGN1GLVGUfmEEpqkuFUP/yepItgc48q0+dzL2Boq2fS32PxNE5v6tynIHQCEvYUDNTXIzzEh+ZOUuDFjes5m9CCkFXLZ+JtTa4PEwHFeHpOUKs14PE2jBe5qNymoUcRugNqpIO9X6AJh7y2e1FpzdW7p68gEydisZyQWWE1S6hfglzzARZ6x/5DzXM7+BafatVte8I2HsKx5ja9vNycTjRqTRaMbID03YiqQeNwoB5S+oeVAjCn4ZeWhnJVLIv3twKVldT2Z5GhAPH/3HUU2eZnftkhPJWNZ0hwmsycP2EsQXa63EyaG7OCQBvZAmlE1q3U69k0zNnskwrjF6vCa7lSlHMX+OcyFVtlIIkXieQCOFtQLS0V0SXYjh8DFib6zqG07OS/yO73Kad/ktwDPpRS5QbN05wkn/KcuTps9K1Qgq9Ni82TUjxt0//z/cRK23egzOA/gbAl65e33XL8/uCtlLL+dqTIPC8KXLOok6pSVEmQazreq2TugeW6emYcK/zGNUT47h9lEInHC6C3Fm4NrhsvCOUlUVmP6ALpjRvTFr01w1V5IKS1k7cdnj2BNukuikFiNEpJcu2d0BFE8=
+  file: $RELEASE_PKG_FILE
+  on:
+    repo: UpWorks/TravisTest
