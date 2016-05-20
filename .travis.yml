@@ -49,7 +49,7 @@ after_script:
 after_success:
 - ./scripts/sign-and-upload.sh
 before_deploy:
-- export RELEASE_PKG_FILE="$RELEASE_FILE"
+- export RELEASE_PKG_FILE=$RELEASE_FILE
 - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
   provider: releases
