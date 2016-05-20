@@ -49,8 +49,8 @@ after_script:
 after_success:
 - ./scripts/sign-and-upload.sh
 before_deploy:
-  - export RELEASE_PKG_FILE="/Users/travis/build/UpWorks/TravisTest/build/Release-iphoneos/TravisTest.app.$TRAVIS_BUILD_NUMBER.dSYM.zip"
-  - echo "deploying  Travis Build $TRAVIS_BUILD_NUMBER to GitHub releases"
+ - export RELEASE_PKG_FILE="/Users/travis/build/UpWorks/TravisTest/build/Release-iphoneos/TravisTest.app.$TRAVIS_BUILD_NUMBER.dSYM.zip"
+ - echo "deploying  Travis Build $TRAVIS_BUILD_NUMBER to GitHub releases"
 deploy:
   provider: releases
   api_key:
