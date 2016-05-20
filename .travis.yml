@@ -54,7 +54,7 @@ deploy:
   provider: releases
   api_key:
     secure: kSJkB+sdJI9P0GoLS9SPSNRedmmcSdOMdNMicqitpKyYhL1EqS3FTe2mewkdScNlEKYpluT+zaS7dVlHpfY+k2xZGN1GLVGUfmEEpqkuFUP/yepItgc48q0+dzL2Boq2fS32PxNE5v6tynIHQCEvYUDNTXIzzEh+ZOUuDFjes5m9CCkFXLZ+JtTa4PEwHFeHpOUKs14PE2jBe5qNymoUcRugNqpIO9X6AJh7y2e1FpzdW7p68gEydisZyQWWE1S6hfglzzARZ6x/5DzXM7+BafatVte8I2HsKx5ja9vNycTjRqTRaMbID03YiqQeNwoB5S+oeVAjCn4ZeWhnJVLIv3twKVldT2Z5GhAPH/3HUU2eZnftkhPJWNZ0hwmsycP2EsQXa63EyaG7OCQBvZAmlE1q3U69k0zNnskwrjF6vCa7lSlHMX+OcyFVtlIIkXieQCOFtQLS0V0SXYjh8DFib6zqG07OS/yO73Kad/ktwDPpRS5QbN05wkn/KcuTps9K1Qgq9Ni82TUjxt0//z/cRK23egzOA/gbAl65e33XL8/uCtlLL+dqTIPC8KXLOok6pSVEmQazreq2TugeW6emYcK/zGNUT47h9lEInHC6C3Fm4NrhsvCOUlUVmP6ALpjRvTFr01w1V5IKS1k7cdnj2BNukuikFiNEpJcu2d0BFE8=
-  file: /Users/travis/build/UpWorks/TravisTest/build/Release-iphoneos/TravisTest.app.*.dSYM.zip
-  skip_cleanup: true
+  file_glob: true
+  file: "/Users/travis/build/UpWorks/TravisTest/build/Release-iphoneos/TravisTest.app.$TRAVIS_BUILD_NUMBER.dSYM.zip"
   on:
     repo: UpWorks/TravisTest
