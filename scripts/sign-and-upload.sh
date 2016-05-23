@@ -21,4 +21,6 @@ RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
 RELEASE_FILE="$OUTPUTDIR/$APP_NAME.app.$TRAVIS_BUILD_NUMBER.dSYM.zip"
 
+echo -e "$RELEASE_NOTES" >> "$OUTPUTDIR/release-notes.txt"
+
 zip -r -9 "$RELEASE_FILE" "$OUTPUTDIR/$APP_NAME.app"
