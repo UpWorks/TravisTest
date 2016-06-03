@@ -29,7 +29,7 @@ before_script:
 - ./scripts/update-bundle.sh
 - cp "./scripts/$GOOD_ZIP" /Applications/Xcode.app/Contents/Developer
 - cd /Applications/Xcode.app/Contents/Developer
-- tar zxvf Good_Dynamics_client_SDK_for_iOS_v2.1.4439.tar.gz
+- tar zxvf "$GOOD_ZIP"
 - cd ./Good.Platform
 - mkdir "$FIPS_DIR"
 - cp "$FIPS_FILE" ./"$FIPS_DIR"
@@ -37,12 +37,12 @@ before_script:
 - tar zxvf "$FIPS_FILE"
 - cd /Applications/Xcode.app/Contents/Developer/Good.Platform
 - sudo ./install.sh
-- cd /Users/travis/build/UpWorks/TravisTest
+- cd /Users/travis/build/"$TRAVIS_REPO_SLUG"
 - ./scripts/cs-xproj-validate.sh
 script:
-- xctool test -project TravisTest.xcodeproj -scheme TravisTest -sdk iphonesimulator9.2
+- xctool test -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk iphonesimulator9.2
   ONLY_ACTIVE_ARCH=NO
-- xctool -project TravisTest.xcodeproj -scheme TravisTest -sdk iphoneos9.2  -configuration
+- xctool -project "$TRAVIS_XCODE_PROJECT" -scheme "$TRAVIS_XCODE_SCHEME" -sdk iphoneos9.2  -configuration
   Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
 after_script:
 - ./scripts/remove-key.sh
