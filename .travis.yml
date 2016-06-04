@@ -19,8 +19,8 @@ env:
   - FIPS_FILE="FIPS_module.tar"
   - FIPS_DIR="FIP_Module"
 before_script:
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/$APP_NAME_Ad_Hoc.mobileprovision.enc
-  -d -a -out scripts/profile/$APP_NAME_Ad_Hoc.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/"$APP_NAME"_Ad_Hoc.mobileprovision.enc
+  -d -a -out scripts/profile/"$APP_NAME"_Ad_Hoc.mobileprovision
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a
   -out scripts/certs/dist.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a
